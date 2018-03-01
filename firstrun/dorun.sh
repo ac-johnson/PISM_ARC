@@ -96,7 +96,7 @@ mpiexec -n $NN pismr -i $Inboot -bootstrap \
   -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
   -Mx $mx -My $my -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
   -z_spacing quadratic -zb_spacing equal \
-  -bed_smoother_range 10e3 \
+  -bed_smoother_range 5e3 \
   -skip -skip_max 20 \
   -grid.correct_cell_areas false -grid.registration corner \
   -ys -$Yst -ye 0 \
