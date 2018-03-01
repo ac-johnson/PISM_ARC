@@ -89,7 +89,7 @@ else bedfstr="-bed_def "$bdef; fi
 mpiexec -n $NN pismr -i $Inboot -bootstrap \
   -regrid_file $Inspin \
   -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
-  -Mx 1157 -My 994 -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
+  -Mx 576 -My 497 -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
   -z_spacing quadratic -zb_spacing equal \
   -skip -skip_max 20 \
   -grid.correct_cell_areas false -grid.registration corner \
