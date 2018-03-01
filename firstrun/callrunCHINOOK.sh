@@ -1,4 +1,4 @@
-export NN=72
+export NN=48
 export PART="debug"
 export mx=1119
 export my=997

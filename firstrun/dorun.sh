@@ -65,9 +65,9 @@ if [ -z ${bdef+1} ];
 then bdefstr=" ";
 else bedfstr="-bed_def "$bdef; fi
 
-if [-z ${set_fk}+1];
-then calvstr = "-calving float_kill,eigen_calving,thickness_calving";
-else calvstr = "-calving eigen_calving,thickness_calving"; fi
+if [ -z ${set_fk}+1 ];
+then calvstr="-calving float_kill,eigen_calving,thickness_calving";
+else calvstr="-calving eigen_calving,thickness_calving"; fi
 
 
 #default vals:
@@ -96,7 +96,8 @@ mpiexec -n $NN pismr -i $Inboot -bootstrap \
   -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
   -Mx $mx -My $my -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
   -z_spacing quadratic -zb_spacing equal \
-  -bed_smoother_range 20e3 \
+  -bed_smoother_range 10e3 \
+  -skip -skip_max 20 \
   -grid.correct_cell_areas false -grid.registration corner \
   -ys -$Yst -ye 0 \
   -surface given -surface_given_file $Inboot \
