@@ -1,6 +1,6 @@
 export NN=24
 export mx=1119
-export my=994
+export my=997
 export Inspin=$HOME/maps/end_evol-5km_Ant_spinup_W65.nc
 export Inboot=$HOME/maps/PISM_1km_v3.nc
 #export Inboot=$Inspin
