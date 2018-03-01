@@ -38,9 +38,6 @@ then SSAe=0.65; fi
 if [ -z ${PPQ+1} ];
 then PPQ=0.25; fi
 
-if [ -z ${PPQ+1} ];
-then PPQ=0.25; fi
-
 if [ -z ${TEFO+1} ];
 then TEFO=0.25; fi
 
