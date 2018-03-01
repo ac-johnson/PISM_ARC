@@ -100,8 +100,8 @@ mpiexec -n $NN pismr -i $Inboot -bootstrap \
   -sia_e $SIAe -ssa_e $SSAe -stress_balance ssa+sia \
   -topg_to_phi $TGPhi -pseudo_plastic -pseudo_plastic_q $PPQ \
   -till_effective_fraction_overburden $TEFO \
-  -calving float_kill,eigen_calving,thickness_calving \
-  -eigen_calving_K $ecalvK -thickness_calving_threshold $tcalvt \
+  -calving float_kill,thickness_calving \
+  -thickness_calving_threshold $tcalvt \
   -subgl $nsbm $bdefstr \
   -tauc_slippery_grounding_lines -ts_file "${Outloc}ts_${Outfm}" -ts_times -$Yst:yearly:0 \
   -extra_file "${Outloc}ex_${Outfm}" -extra_times -$Yst:1:0 \
