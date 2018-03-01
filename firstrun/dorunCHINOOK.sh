@@ -87,7 +87,7 @@ else bedfstr="-bed_def "$bdef; fi
 mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -regrid_file $Inspin \
   -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
-  -Mx 1157 -My 994 -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \ 
+  -Mx $mx -My $my -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
   -z_spacing quadratic -zb_spacing equal \
   -skip -skip_max 20 \
   -grid.correct_cell_areas false -grid.registration corner \
@@ -96,14 +96,15 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -atmosphere given,lapse_rate -atmosphere_given_file $Inboot \
   -atmostphere_lapse_rate_file $Inboot -temp_lapse_rate $lapr\
   -sia_e $SIAe -ssa_e $SSAe -stress_balance ssa+sia \
-  -topg_to_phi $TGPhi -pseudo_plastic -pseudo_plastic_q $PPQ 
+  -topg_to_phi $TGPhi -pseudo_plastic -pseudo_plastic_q $PPQ \
   -till_effective_fraction_overburden $TEFO \
-  -calving float_kill \
-  -calving eigen_calving -eigen_calving_K $ecalvK \
-  -calving thickness_calving -thickness_calving_threshold $tcalvt \
+  -calving float_kill,thickness_calving \
+  -thickness_calving_threshold $tcalvt \
   -subgl $nsbm $bdefstr \
-  -tauc_slippery_grounding_lines -ts_file ts_$Outfile -ts_times -$Yst:yearly:0 \
-  -extra_file ex_$Outfile -extra_times -$Yst:50:0 -extra_vars \ diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,strain_rates,discharge_,deviatoric_stresses  -o $Outfile
+  -tauc_slippery_grounding_lines -ts_file "${Outloc}ts_${Outfm}" -ts_times -$Yst:yearly:0 \
+  -extra_file "${Outloc}ex_${Outfm}" -extra_times -$Yst:1:0 \
+  -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,tendency_of_ice_amount_due_to_discharge,dHdt \
+  -o "$Outloc$Outfm"
 
 
 
