@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo $NN
+
 #SBATCH --partition=$PART
 #SBATCH --ntasks=$NN
 #SBATCH --tasks-per-node=24
