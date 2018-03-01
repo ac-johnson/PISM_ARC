@@ -101,10 +101,10 @@ mpiexec -n $NN pismr -i $Inboot -bootstrap \
   -calving eigen_calving -eigen_calving_K $ecalvK \
   -calving thickness_calving -thickness_calving_threshold $tcalvt \
   -subgl $nsbm $bdefstr \
-  -tauc_slippery_grounding_lines -ts_file ts_$Outfile -ts_times -$Yst:yearly:0 \
-  -extra_file ex_$Outfile -extra_times -$Yst:50:0 \
-  -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,strain_rates,discharge_,deviatoric_stresses \
-  -o $Outfile
+  -tauc_slippery_grounding_lines -ts_file "${Outloc}ts_${Outfm}" -ts_times -$Yst:yearly:0 \
+  -extra_file "${Outloc}ex_${Outfm}" -extra_times -$Yst:50:0 \
+  -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,strain_rates,tendency_of_ice_amount_due_to_discharge,deviatoric_stresses,dHdt \
+  -o "$Outloc$Outfm"
 
 
 
