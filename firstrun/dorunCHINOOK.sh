@@ -38,14 +38,20 @@ then SSAe=0.65; fi
 if [ -z ${PPQ+1} ];
 then PPQ=0.25; fi
 
+if [ -z ${PPQ+1} ];
+then PPQ=0.25; fi
+
+if [ -z ${TEFO+1} ];
+then TEFO=0.25; fi
+
 if [ -z ${TGPhi+1} ];
 then TGPhi=15.0,40.0,-700,-100; fi
 
-if [ -z ${TFGO+1} ];
-then TFGO=15.0,40,-700,-100; fi
+#if [ -z ${TFGO+1} ];		#What is this??
+#then TFGO=15.0,40,-700,-100; fi
 
 if [ -z ${ecalvK+1} ];
-then TFGO=5e15; fi
+then ecalvK=5e15; fi
 
 if [ -z ${tcalvt+1} ];
 then tcalvt=50; fi
@@ -71,12 +77,15 @@ else bedfstr="-bed_def "$bdef; fi
 #TGPhi=15.0,40.0,-700,-100
 #TEFO=0.02
 #lapr=8 K/km
+#ecalvK = 5e15
+#tcalvt = 50m
 #Inspin=end_evol-5km_Ant_spinup_W65.nc
 #Inboot=PISM_1km.nc
-#nsbm=  (empty)
-#bdef=  (empty)
+#nsbm=  (empty) #yes basal melt
+#bdef=  (empty) #no bed def
 #mx= 	1157
 #my=	994
+#TO SET: mantle viscosity of 1e20
 
 mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -regrid_file $Inspin \
@@ -90,7 +99,8 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -atmosphere given,lapse_rate -atmosphere_given_file $Inboot \
   -atmostphere_lapse_rate_file $Inboot -temp_lapse_rate $lapr\
   -sia_e $SIAe -ssa_e $SSAe -stress_balance ssa+sia \
-  -topg_to_phi $TGPhi -pseudo_plastic -pseudo_plastic_q $PPQ -till_effective_fraction_overburden $TEFO \
+  -topg_to_phi $TGPhi -pseudo_plastic -pseudo_plastic_q $PPQ 
+  -till_effective_fraction_overburden $TEFO \
   -calving float_kill \
   -calving eigen_calving -eigen_calving_K $ecalvK \
   -calving thickness_calving -thickness_calving_threshold $tcalvt \

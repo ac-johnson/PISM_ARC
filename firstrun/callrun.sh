@@ -1,4 +1,4 @@
-export NN=8
+export NN=24
 export Inspin=$HOME/maps/end_evol-5km_Ant_spinup_W65.nc
 export Inboot=$HOME/maps/PISM_1km_v4.nc
 export Yst=1

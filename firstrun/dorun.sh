@@ -38,14 +38,20 @@ then SSAe=0.65; fi
 if [ -z ${PPQ+1} ];
 then PPQ=0.25; fi
 
+if [ -z ${PPQ+1} ];
+then PPQ=0.25; fi
+
+if [ -z ${TEFO+1} ];
+then TEFO=0.25; fi
+
 if [ -z ${TGPhi+1} ];
 then TGPhi=15.0,40.0,-700,-100; fi
 
-if [ -z ${TFGO+1} ];
-then TFGO=15.0,40,-700,-100; fi
+#if [ -z ${TFGO+1} ];		#What is this??
+#then TFGO=15.0,40,-700,-100; fi
 
 if [ -z ${ecalvK+1} ];
-then TFGO=5e15; fi
+then ecalvK=5e15; fi
 
 if [ -z ${tcalvt+1} ];
 then tcalvt=50; fi
@@ -71,6 +77,8 @@ else bedfstr="-bed_def "$bdef; fi
 #TGPhi=15.0,40.0,-700,-100
 #TEFO=0.02
 #lapr=8 K/km
+#ecalvK = 5e15
+#tcalvt = 50m
 #Inspin=end_evol-5km_Ant_spinup_W65.nc
 #Inboot=PISM_1km.nc
 #nsbm=  (empty)
