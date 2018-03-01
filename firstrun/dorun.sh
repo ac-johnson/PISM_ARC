@@ -89,7 +89,7 @@ else bedfstr="-bed_def "$bdef; fi
 mpiexec -n $NN pismr -i $Inboot -bootstrap \
   -regrid_file $Inspin \
   -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
-  -Mx 576 -My 497 -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
+  -Mx $mx -My $my -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
   -z_spacing quadratic -zb_spacing equal \
   -skip -skip_max 20 \
   -grid.correct_cell_areas false -grid.registration corner \
@@ -100,16 +100,24 @@ mpiexec -n $NN pismr -i $Inboot -bootstrap \
   -sia_e $SIAe -ssa_e $SSAe -stress_balance ssa+sia \
   -topg_to_phi $TGPhi -pseudo_plastic -pseudo_plastic_q $PPQ \
   -till_effective_fraction_overburden $TEFO \
-  -calving float_kill \
-  -calving eigen_calving -eigen_calving_K $ecalvK \
-  -calving thickness_calving -thickness_calving_threshold $tcalvt \
+  -calving float_kill,thickness_calving \
+  -thickness_calving_threshold $tcalvt \
   -subgl $nsbm $bdefstr \
   -tauc_slippery_grounding_lines -ts_file "${Outloc}ts_${Outfm}" -ts_times -$Yst:yearly:0 \
-  -extra_file "${Outloc}ex_${Outfm}" -extra_times -$Yst:50:0 \
+  -extra_file "${Outloc}ex_${Outfm}" -extra_times -$Yst:1:0 \
   -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,tendency_of_ice_amount_due_to_discharge,dHdt \
   -o "$Outloc$Outfm"
 
 
 #not getting: strain_rates, deviatoric_stresses
+##  -calving float_kill \
+
+#Eigencalving On:
+#  -calving float_kill,eigen_calving,thickness_calving \
+#  -eigen_calving_K $ecalvK -thickness_calving_threshold $tcalvt \
+
+#Eigencalving Off:
+#  -calving float_kill,thickness_calving \
+#  -thickness_calving_threshold $tcalvt \
 
 #mpiexec -n 8 pismr -i ../end_evol-5km_Ant_spinup_W65.nc -bootstrap -Mx 301 -My 561 -Mz 201 -Mbz 21 -z_spacing equal -Lz 4000 -Lbz 2000 -skip -skip_max 20 -grid.correct_cell_areas false -grid.registration corner -ys -500 -ye 0 -surface given -surface_given_file pism_Greenland_5km_v1.1.nc -calving ocean_kill -ocean_kill_file pism_Greenland_5km_v1.1.nc -sia_e 3.0 -stress_balance ssa+sia -topg_to_phi 15.0,40.0,-300.0,700.0 -pseudo_plastic -pseudo_plastic_q 0.25 -till_effective_fraction_overburden 0.02 -tauc_slippery_grounding_lines -ts_file ts_test.nc -ts_times -500:yearly:0 -extra_file ex_test.nc -extra_times -500:100:0 -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc -o test.nc
