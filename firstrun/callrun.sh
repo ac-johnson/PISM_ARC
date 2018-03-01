@@ -1,9 +1,9 @@
 export NN=8
-export mx=579
+export mx=560
 export my=497
 export Inspin=$HOME/maps/end_evol-5km_Ant_spinup_W65.nc
-#export Inboot=$HOME/maps/PISM_1km_v4.nc
-export Inboot=$Inspin
+export Inboot=$HOME/maps/PISM_1km_v3.nc
+#export Inboot=$Inspin
 export Yst=1
 export Outloc=$HOME/runs/
 export Outfm=Ant_1yr_fk.nc

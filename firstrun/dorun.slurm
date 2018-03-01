@@ -16,9 +16,9 @@ ulimit -l unlimited
 
 # Load any desired modules, usually the same as loaded to compile
 . /etc/profile.d/modules.sh
-# module purge
+module purge
 # module load toolchain/pic-intel/2016b
-# module load slurm
+module load slurm
 
 cd $SLURM_SUBMIT_DIR
 # Generate a list of allocated nodes; will serve as a machinefile for mpirun

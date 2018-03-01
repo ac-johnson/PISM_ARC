@@ -97,12 +97,11 @@ mpiexec -n $NN pismr -i $Inboot -bootstrap \
   -Mx $mx -My $my -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
   -z_spacing quadratic -zb_spacing equal \
   -bed_smoother_range 20e3 \
-  -skip -skip_max 20 \
   -grid.correct_cell_areas false -grid.registration corner \
   -ys -$Yst -ye 0 \
   -surface given -surface_given_file $Inboot \
   -atmosphere given,lapse_rate -atmosphere_given_file $Inboot \
-  -atmostphere_lapse_rate_file $Inboot -temp_lapse_rate $lapr\
+  -atmostphere_lapse_rate_file $Inboot -temp_lapse_rate $lapr \
   -sia_e $SIAe -ssa_e $SSAe -stress_balance ssa+sia \
   -topg_to_phi $TGPhi -pseudo_plastic -pseudo_plastic_q $PPQ \
   -till_effective_fraction_overburden $TEFO \
@@ -114,6 +113,7 @@ mpiexec -n $NN pismr -i $Inboot -bootstrap \
   -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,tendency_of_ice_amount_due_to_discharge,dHdt \
   -o "$Outloc$Outfm"
 
+#  -skip -skip_max 20 \
 
 #not getting: strain_rates, deviatoric_stresses
 ##  -calving float_kill \
