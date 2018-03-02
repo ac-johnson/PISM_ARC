@@ -30,44 +30,44 @@ if [ -z ${NN+1} ];
 then echo "Set NN number of cores!"; fi
 
 if [ -z ${SIAe+1} ];
-then SIAe=2.0; fi
+then export SIAe=2.0; fi
 
 if [ -z ${SSAe+1} ];
-then SSAe=0.65; fi
+then export SSAe=0.65; fi
 
 if [ -z ${PPQ+1} ];
-then PPQ=0.25; fi
+then export PPQ=0.25; fi
 
 if [ -z ${TEFO+1} ];
-then TEFO=0.25; fi
+then export TEFO=0.25; fi
 
 if [ -z ${TGPhi+1} ];
-then TGPhi=15.0,40.0,-700,-100; fi
+then export TGPhi=15.0,40.0,-700,-100; fi
 
 #if [ -z ${TFGO+1} ];		#What is this??
 #then TFGO=15.0,40,-700,-100; fi
 
 if [ -z ${ecalvK+1} ];
-then ecalvK=5e15; fi
+then export ecalvK=5e15; fi
 
 if [ -z ${tcalvt+1} ];
-then tcalvt=50; fi
+then export tcalvt=50; fi
 
 if [ -z ${lapr+1} ];
-then lapr=8; fi
+then export lapr=8; fi
 
 #Options to enable:
 if [ -z ${nsbm+1} ];
-then nsbm=" ";
-else nsbm="-no_subgl_basal_melt"; fi
+then export nsbm="";
+else export nsbm="-no_subgl_basal_melt"; fi
 
 if [ -z ${bdef+1} ];
-then bdefstr=" ";
-else bedfstr="-bed_def "$bdef; fi
+then export bdefstr="";
+else export bedfstr="-bed_def "$bdef; fi
 
 if [ -z ${set_fk}+1 ];
-then calvstr="-calving float_kill,eigen_calving,thickness_calving";
-else calvstr="-calving eigen_calving,thickness_calving"; fi
+then export calvstr="-calving float_kill,eigen_calving,thickness_calving";
+else export calvstr="-calving eigen_calving,thickness_calving"; fi
 
 
 #default vals:
