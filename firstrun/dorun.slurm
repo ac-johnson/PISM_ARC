@@ -12,6 +12,9 @@ PART=debug
 #SBATCH --mail-type=FAIL
 #SBATCH --output=pismr.%j
 
+echo "nodes: "$NN
+echo "parition: "$PART
+
 ulimit -s unlimited
 ulimit -l unlimited
 
