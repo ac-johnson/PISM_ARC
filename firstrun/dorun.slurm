@@ -1,5 +1,8 @@
 #!/bin/sh
 
+NN=72
+PART=debug
+
 #SBATCH --partition=$PART
 #SBATCH --ntasks=$NN
 #SBATCH --tasks-per-node=24
