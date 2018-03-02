@@ -28,7 +28,7 @@ cd $SLURM_SUBMIT_DIR
 # Generate a list of allocated nodes; will serve as a machinefile for mpirun
 srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
 # Launch the MPI application
-#sh $HOME/PISM_ARC/firstrun/callrunCHINOOK.sh
+
 mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -regrid_file $Inspin \
   -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
@@ -36,7 +36,6 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -z_spacing quadratic -zb_spacing equal \
   -bed_smoother_range 5e3 \
   -skip -skip_max 20 \
-  -grid.correct_cell_areas false -grid.registration corner \
   -ys -$Yst -ye $Yet \
   -surface given -surface_given_file $Inboot \
   -atmosphere given,lapse_rate -atmosphere_given_file $Inboot \
@@ -51,6 +50,9 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -extra_file "${Outloc}ex_${Outfm}" -extra_times -$Yst:1:$Yet \
   -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,tendency_of_ice_amount_due_to_discharge,dHdt \
   -o "$Outloc$Outfm"
+
+#  -grid.correct_cell_areas false -grid.registration corner \
+
 #mpirun -n 24 -machinefile ./nodes.$SLURM_JOB_ID pismv -test G -y 200
 # Clean up the machinefile
 rm ./nodes.$SLURM_JOB_ID
