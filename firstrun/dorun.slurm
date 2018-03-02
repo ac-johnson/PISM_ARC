@@ -3,8 +3,8 @@
 NN=24
 PART=debug
 
-#SBATCH --partition=$PART
-#SBATCH --ntasks=$NN
+#SBATCH --partition=debug
+#SBATCH --ntasks=24
 #SBATCH --tasks-per-node=24
 #SBATCH --mail-user=acjohnson16@alaska.edu
 #SBATCH --mail-type=BEGIN
