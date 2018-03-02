@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NN=72
+NN=24
 PART=debug
 
 #SBATCH --partition=$PART
