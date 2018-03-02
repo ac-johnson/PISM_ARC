@@ -1,5 +1,5 @@
-#export NN=72
-#export PART="debug"
+export NN=24
+export PART="debug"
 export mx=1119
 export my=997
 export Inspin=$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc
