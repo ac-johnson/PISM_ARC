@@ -26,8 +26,8 @@
 
 ### Check and set vars ###
 
-if [ -z ${NN+1} ];
-then echo "Set NN number of cores!"; fi
+#if [ -z ${NN+1} ];
+#then echo "Set NN number of cores!"; fi
 
 if [ -z ${SIAe+1} ];
 then export SIAe=2.0; fi
