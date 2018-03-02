@@ -1,8 +1,5 @@
 #!/bin/sh
 
-NN=24
-PART=debug
-
 #SBATCH --partition=debug
 #SBATCH --ntasks=24
 #SBATCH --tasks-per-node=24
@@ -11,6 +8,9 @@ PART=debug
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
 #SBATCH --output=pismr.%j
+
+NN=24
+PART=debug
 
 echo "nodes: "$NN
 echo "parition: "$PART
