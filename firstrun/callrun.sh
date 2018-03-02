@@ -6,7 +6,7 @@ export Inboot=$HOME/maps/PISM_1km_v3.nc
 #export Inboot=$Inspin
 export Yst=1
 export Outloc=$HOME/runs/
-export Outfm=Ant_1yr_fk.nc
+export Outfm=Ant_1yr_fk_test.nc
 export set_fk=1
 #export bdef=1
 
