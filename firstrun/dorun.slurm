@@ -36,6 +36,7 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -z_spacing quadratic -zb_spacing equal \
   -bed_smoother_range 5e3 \
   -skip -skip_max 20 \
+  -grid.correct_cell_areas false -grid.registration corner \
   -ys -$Yst -ye $Yet \
   -surface given -surface_given_file $Inboot \
   -atmosphere given,lapse_rate -atmosphere_given_file $Inboot \

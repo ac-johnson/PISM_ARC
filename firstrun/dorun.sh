@@ -99,7 +99,7 @@ mpiexec -n $NN pismr -i $Inboot -bootstrap \
   -bed_smoother_range 5e3 \
   -skip -skip_max 20 \
   -grid.correct_cell_areas false -grid.registration corner \
-  -ys -$Yst -ye 0 \
+  -ys -$Yst -ye $Yet \
   -surface given -surface_given_file $Inboot \
   -atmosphere given,lapse_rate -atmosphere_given_file $Inboot \
   -atmostphere_lapse_rate_file $Inboot -temp_lapse_rate $lapr \
@@ -109,8 +109,8 @@ mpiexec -n $NN pismr -i $Inboot -bootstrap \
   -calving float_kill,eigen_calving,thickness_calving \
   -eigen_calving_K $ecalvK -thickness_calving_threshold $tcalvt \
   -subgl $nsbm $bdefstr \
-  -tauc_slippery_grounding_lines -ts_file "${Outloc}ts_${Outfm}" -ts_times -$Yst:yearly:0 \
-  -extra_file "${Outloc}ex_${Outfm}" -extra_times -$Yst:1:0 \
+  -tauc_slippery_grounding_lines -ts_file "${Outloc}ts_${Outfm}" -ts_times -$Yst:yearly:$Yet \
+  -extra_file "${Outloc}ex_${Outfm}" -extra_times -$Yst:1:$Yet \
   -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,tendency_of_ice_amount_due_to_discharge,dHdt \
   -o "$Outloc$Outfm"
 
