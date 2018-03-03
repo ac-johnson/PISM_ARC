@@ -6,9 +6,9 @@ export Inspin=$HOME/runs/Ant_1yr_fk.nc
 export Inboot=$HOME/maps/PISM_1km_v3.nc
 #export Inboot=$Inspin
 export Yst=0
-export Yet=0.2
+export Yet=1000
 export Outloc=$HOME/runs/
-export Outfm=Ant_1yr_fk_debug.nc
+export Outfm=Ant_1kyr_5km_fk.nc
 export set_fk=1
 #export bdef=1
 
