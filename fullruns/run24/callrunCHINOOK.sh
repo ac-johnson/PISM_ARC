@@ -11,7 +11,7 @@ export Yet=1000
 export Outloc=$CENTER1/runs/
 export Outfm=Ant_1run24.nc
 #export set_fk=1
-export PPQ = 0.75
+export PPQ=0.75
 
 ./dorunCHINOOK.sh
 
