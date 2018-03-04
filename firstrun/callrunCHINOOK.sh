@@ -2,15 +2,15 @@
 #export PART="debug"
 export mx=1119
 export my=997
-#export Inspin=$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc
-export Inspin=$CENTER1/runs/Ant_1yr_fk.nc
+export Inspin=$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc
+#export Inspin=$CENTER1/runs/Ant_1yr_fk.nc
 #export Inboot=$Inspin
 export Inboot=$CENTER1/maps/PISM_1km_v3.nc
 export Yst=0
-export Yet=0.2
+export Yet=5
 export Outloc=$CENTER1/runs/
-export Outfm=Ant_1yr_fk_debug.nc
-export set_fk=1
+export Outfm=Ant_5yr_5km_nofk.nc
+#export set_fk=1
 
 ./dorunCHINOOK.sh
 
