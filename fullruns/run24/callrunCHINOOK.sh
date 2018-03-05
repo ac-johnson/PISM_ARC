@@ -9,8 +9,8 @@ export Inboot=$CENTER1/maps/PISM_1km_v3.nc
 export Yst=0
 export Yet=1000
 export Outloc=$CENTER1/runs/
-export Outfm=Ant_1run24.nc
-#export set_fk=1
+export Outfm=Ant_run24.nc
+export set_fk=1
 export PPQ=0.75
 
 ./dorunCHINOOK.sh
