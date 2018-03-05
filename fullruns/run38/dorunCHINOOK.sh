@@ -42,7 +42,7 @@ if [ -z ${TEFO+1} ];
 then export TEFO=0.25; fi
 
 if [ -z ${TGPhi+1} ];
-then export TGPhi=15.0,40.0,-700,-100; fi
+then export TGPhi=15.0,40.0,-100,-700; fi
 
 #if [ -z ${TFGO+1} ];		#What is this??
 #then TFGO=15.0,40,-700,-100; fi
