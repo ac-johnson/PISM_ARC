@@ -66,8 +66,8 @@ then export bdefstr="";
 else export bedfstr="-bed_def "$bdef; fi
 
 if [ -z ${set_fk}+1 ];
-then export calvstr="-calving float_kill,eigen_calving,thickness_calving";
-else export calvstr="-calving eigen_calving,thickness_calving"; fi
+then export calvstr="-calving eigen_calving,thickness_calving";
+else export calvstr="-calving float_kill,eigen_calving,thickness_calving"; fi
 
 
 #default vals:
