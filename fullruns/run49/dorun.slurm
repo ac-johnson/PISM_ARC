@@ -46,7 +46,7 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -topg_to_phi $TGPhi -pseudo_plastic -pseudo_plastic_q $PPQ \
   -pseudo_plastic_uthreshold $PPUt \
   -till_effective_fraction_overburden $TEFO \
-  -ocean const \
+  -ocean constant \
   -calving $calvstr \
   -eigen_calving_K $ecalvK -thickness_calving_threshold $tcalvt \
   -subgl $nsbm $bdefstr \
