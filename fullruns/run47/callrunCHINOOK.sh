@@ -15,7 +15,7 @@ export Inspin=$CENTER1/runs/Ant_1yr_fk.nc
 #export Inboot=$Inspin
 export Inboot=$CENTER1/maps/PISM_1km_v3.nc
 export Yst=0
-export Yet=2000
+export Yet=3000
 export Outloc=$CENTER1/runs/
 
 ./dorunCHINOOK.sh
