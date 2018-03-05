@@ -14,7 +14,7 @@ export set_fk=1
 export SIAe=3
 export SSAe=1
 export PPQ=1
-export TGPhi=20.0,65.0,-100,-700
+export TGPhi=20.0,65.0,-700,-100
 
 ./dorunCHINOOK.sh
 
