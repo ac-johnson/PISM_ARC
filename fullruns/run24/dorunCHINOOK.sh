@@ -56,6 +56,9 @@ then export tcalvt=50; fi
 if [ -z ${lapr+1} ];
 then export lapr=8; fi
 
+if [ -z ${PPUt+1} ];
+then export PPUt=100; fi
+
 #Options to enable:
 if [ -z ${nsbm+1} ];
 then export nsbm="";
@@ -66,8 +69,8 @@ then export bdefstr="";
 else export bedfstr="-bed_def "$bdef; fi
 
 if [ -z ${set_fk}+1 ];
-then export calvstr="-calving float_kill,eigen_calving,thickness_calving";
-else export calvstr="-calving eigen_calving,thickness_calving"; fi
+then export calvstr="-calving eigen_calving,thickness_calving";
+else export calvstr="-calving float_kill,eigen_calving,thickness_calving"; fi
 
 
 #default vals:

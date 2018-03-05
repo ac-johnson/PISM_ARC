@@ -56,6 +56,9 @@ then export tcalvt=50; fi
 if [ -z ${lapr+1} ];
 then export lapr=8; fi
 
+if [ -z ${PPUt+1} ];
+then export PPUt=100; fi
+
 #Options to enable:
 if [ -z ${nsbm+1} ];
 then export nsbm="";
