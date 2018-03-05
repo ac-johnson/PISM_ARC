@@ -7,9 +7,9 @@ export Inspin=$CENTER1/runs/Ant_1yr_fk.nc
 #export Inboot=$Inspin
 export Inboot=$CENTER1/maps/PISM_1km_v3.nc
 export Yst=0
-export Yet=1000
+export Yet=10000
 export Outloc=$CENTER1/runs/
-export Outfm=Ant_run5.nc
+export Outfm=Ant_10kyr_run5.nc
 export set_fk=1
 
 ./dorunCHINOOK.sh
