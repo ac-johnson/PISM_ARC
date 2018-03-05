@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #SBATCH --partition=t1standard
-#SBATCH --ntasks=384
+#SBATCH --ntasks=94
 #SBATCH --tasks-per-node=24
 #SBATCH --mail-user=acjohnson16@alaska.edu
 #SBATCH --mail-type=BEGIN
@@ -9,7 +9,7 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --output=pismr.%j
 
-NN=384
+NN=94
 PART=t1standard
 
 echo "nodes: "$NN
@@ -28,7 +28,7 @@ cd $SLURM_SUBMIT_DIR
 # Generate a list of allocated nodes; will serve as a machinefile for mpirun
 srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
 # Launch the MPI application
-echo ecalvK
+echo "ecalvK: "$ecalvK
 
 mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -regrid_file $Inspin \
@@ -50,7 +50,7 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -eigen_calving_K $ecalvK -thickness_calving_threshold $tcalvt \
   -subgl $nsbm $bdefstr \
   -tauc_slippery_grounding_lines -ts_file "${Outloc}ts_${Outfm}" -ts_times -$Yst:yearly:$Yet \
-  -extra_file "${Outloc}ex_${Outfm}" -extra_times -$Yst:20:$Yet \
+  -extra_file "${Outloc}ex_${Outfm}" -extra_times -$Yst:40:$Yet \
   -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,tendency_of_ice_amount_due_to_discharge,dHdt \
   -o "$Outloc$Outfm"
 
