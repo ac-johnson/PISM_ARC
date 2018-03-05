@@ -29,7 +29,9 @@ cd $SLURM_SUBMIT_DIR
 srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
 # Launch the MPI application
 
-mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
+echo $calvstr
+
+#mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -regrid_file $Inspin \
   -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
   -Mx $mx -My $my -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
