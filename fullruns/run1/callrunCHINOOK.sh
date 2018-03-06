@@ -8,8 +8,8 @@ export ecalvK=5e15
 export PPUt=100
 export SIAe=2
 
-export mx=560
-export my=499
+export mx=1119
+export my=997
 #export Inspin=$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc
 export Inspin=$CENTER1/maps/Ant_1yr_fk.nc
 #export Inboot=$Inspin
