@@ -39,7 +39,7 @@ if [ -z ${PPQ+1} ];
 then export PPQ=0.25; fi
 
 if [ -z ${TEFO+1} ];
-then export TEFO=0.25; fi
+then export TEFO=0.02; fi
 
 if [ -z ${TGPhi+1} ];
 then export TGPhi=15.0,40.0,-700,-100; fi
