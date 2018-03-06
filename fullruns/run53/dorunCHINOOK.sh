@@ -91,8 +91,6 @@ else export calvstr="-calving float_kill,eigen_calving,thickness_calving"; fi
 #my=	994
 #TO SET: mantle viscosity of 1e20
 
-echo $calvstr
-
 sbatch dorun.slurm
 
 

@@ -1,10 +1,10 @@
-export Outfm=Ant_run5.nc
+export Outfm=Ant_run.nc
 export set_fk=1
 
-export SSAe=1.0
-export PPQ=1
-export TGPhi=10.0,30.0,-700,-100
-export ecalvK=1e17
+export SSAe=0.65
+export PPQ=0.25
+export TGPhi=15.0,40.0,-700,-100
+export ecalvK=5e15
 export PPUt=100
 export SIAe=2
 
