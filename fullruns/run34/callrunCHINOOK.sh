@@ -1,21 +1,21 @@
-export Outfm=Ant_run34.nc
+#export Outfm=Ant_run54.nc
 #export set_fk=1
 
-export SSAe=1.0
-export PPQ=1
-export TGPhi=10.0,30.0,-700,-100
-export ecalvK=1e17
-export PPUt=50
+export SSAe=0.65
+export PPQ=0.5
+export TGPhi=15.0,40.0,-700,-100
+export ecalvK=5e15
+export PPUt=100
 export SIAe=2
 
 export mx=560
 export my=499
-#export Inspin=$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc
-export Inspin=$CENTER1/runs/Ant_1yr_fk.nc
+export Inspin=$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc
+#export Inspin=$CENTER1/maps/Ant_1yr_fk.nc
 #export Inboot=$Inspin
 export Inboot=$CENTER1/maps/PISM_1km_v3.nc
 export Yst=0
-export Yet=2000
+export Yet=1000
 export Outloc=$CENTER1/runs/
 
 ./dorunCHINOOK.sh

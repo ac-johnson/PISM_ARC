@@ -39,7 +39,7 @@ if [ -z ${PPQ+1} ];
 then export PPQ=0.25; fi
 
 if [ -z ${TEFO+1} ];
-then export TEFO=0.25; fi
+then export TEFO=0.02; fi
 
 if [ -z ${TGPhi+1} ];
 then export TGPhi=15.0,40.0,-700,-100; fi
@@ -90,8 +90,6 @@ else export calvstr="-calving float_kill,eigen_calving,thickness_calving"; fi
 #mx= 	1157
 #my=	994
 #TO SET: mantle viscosity of 1e20
-
-echo $calvstr
 
 sbatch dorun.slurm
 

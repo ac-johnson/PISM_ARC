@@ -39,7 +39,7 @@ if [ -z ${PPQ+1} ];
 then export PPQ=0.25; fi
 
 if [ -z ${TEFO+1} ];
-then export TEFO=0.25; fi
+then export TEFO=0.02; fi
 
 if [ -z ${TGPhi+1} ];
 then export TGPhi=15.0,40.0,-700,-100; fi
@@ -56,6 +56,9 @@ then export tcalvt=50; fi
 if [ -z ${lapr+1} ];
 then export lapr=8; fi
 
+if [ -z ${PPUt+1} ];
+then export PPUt=100; fi
+
 #Options to enable:
 if [ -z ${nsbm+1} ];
 then export nsbm="";
@@ -65,9 +68,9 @@ if [ -z ${bdef+1} ];
 then export bdefstr="";
 else export bedfstr="-bed_def "$bdef; fi
 
-if [ -z ${set_fk}+1 ];
-then export calvstr="-calving float_kill,eigen_calving,thickness_calving";
-else export calvstr="-calving eigen_calving,thickness_calving"; fi
+if [ -z ${set_fk+1} ];
+then export calvstr="-calving eigen_calving,thickness_calving";
+else export calvstr="-calving float_kill,eigen_calving,thickness_calving"; fi
 
 
 #default vals:
