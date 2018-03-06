@@ -1,5 +1,5 @@
 export Outfm=Ant_1yr_fk.nc
-/export set_fk=1
+export set_fk=1
 
 #export SSAe=1.0
 #export PPQ=1
