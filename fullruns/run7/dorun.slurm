@@ -28,9 +28,9 @@ srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
 # Launch the MPI application
 #echo "ecalvK: "$ecalvK
 
-mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
-  -regrid_file $Inspin \
-  -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
+mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin -bootstrap \
+#  -regrid_file $Inspin \
+#  -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
   -Mx $mx -My $my -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
   -z_spacing quadratic -zb_spacing equal \
   -bed_smoother_range 5e3 \
