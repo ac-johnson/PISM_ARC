@@ -68,7 +68,7 @@ if [ -z ${bdef+1} ];
 then export bdefstr="";
 else export bedfstr="-bed_def "$bdef; fi
 
-if [ -z ${set_fk}+1 ];
+if [ -z ${set_fk+1} ];
 then export calvstr="-calving eigen_calving,thickness_calving";
 else export calvstr="-calving float_kill,eigen_calving,thickness_calving"; fi
 
@@ -90,6 +90,8 @@ else export calvstr="-calving float_kill,eigen_calving,thickness_calving"; fi
 #mx= 	1157
 #my=	994
 #TO SET: mantle viscosity of 1e20
+
+echo $calvstr
 
 sbatch dorun.slurm
 

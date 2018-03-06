@@ -1,4 +1,4 @@
-export Outfm=Ant_run.nc
+export Outfm=Ant_run8.nc
 #export set_fk=1
 
 export SSAe=1.0
