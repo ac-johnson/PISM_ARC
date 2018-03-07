@@ -29,8 +29,6 @@ srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
 #echo "ecalvK: "$ecalvK
 
 mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin -bootstrap \
-#  -regrid_file $Inspin \
-#  -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
   -Mx $mx -My $my -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
   -z_spacing quadratic -zb_spacing equal \
   -bed_smoother_range 5e3 \
@@ -51,6 +49,9 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin -bootstrap \
   -extra_file "${Outloc}ex_${Outfm}" -extra_times -$Yst:100:$Yet \
   -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,tendency_of_ice_amount_due_to_discharge,dHdt \
   -o "$Outloc$Outfm"
+
+#  -regrid_file $Inspin \
+#  -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
 
 #  -grid.correct_cell_areas false -grid.registration corner \
 
