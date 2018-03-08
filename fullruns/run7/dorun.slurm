@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#SBATCH --partition=t1small
+#SBATCH --partition=debug
 #SBATCH --ntasks=48
 #SBATCH --tasks-per-node=24
 #SBATCH --mail-user=acjohnson16@alaska.edu
