@@ -28,7 +28,7 @@ srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
 # Launch the MPI application
 #echo "ecalvK: "$ecalvK
 
-mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin -bootstrap \
+mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin \
   -Mx $mx -My $my \
   -skip -skip_max 20 \
   -bed_smoother_range 5e3 \
