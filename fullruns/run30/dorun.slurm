@@ -1,7 +1,7 @@
 #!/bin/sh
 
-#SBATCH --partition=t1standard
-#SBATCH --ntasks=96
+#SBATCH --partition=t1small
+#SBATCH --ntasks=48
 #SBATCH --tasks-per-node=24
 #SBATCH --mail-user=acjohnson16@alaska.edu
 #SBATCH --mail-type=BEGIN
@@ -28,13 +28,10 @@ srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
 # Launch the MPI application
 #echo "ecalvK: "$ecalvK
 
-mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
-  -regrid_file $Inspin \
-  -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
-  -Mx $mx -My $my -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
-  -z_spacing quadratic -zb_spacing equal \
-  -bed_smoother_range 5e3 \
+mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin \
+  -Mx $mx -My $my
   -skip -skip_max 20 \
+  -bed_smoother_range 5e3 \
   -grid.correct_cell_areas false -grid.registration corner \
   -ys -$Yst -ye $Yet \
   -surface given -surface_given_file $Inboot \
@@ -53,6 +50,12 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -o "$Outloc$Outfm"
 
 #  -grid.correct_cell_areas false -grid.registration corner \
+
+#  -regrid_file $Inspin \
+#  -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
+#  -Mx $mx -My $my -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
+#  -z_spacing quadratic -zb_spacing equal \
+
 
 #mpirun -n 24 -machinefile ./nodes.$SLURM_JOB_ID pismv -test G -y 200
 # Clean up the machinefile
