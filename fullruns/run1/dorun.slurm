@@ -1,7 +1,7 @@
 #!/bin/sh
 
-#SBATCH --partition=t1small
-#SBATCH --ntasks=48
+#SBATCH --partition=t1standard
+#SBATCH --ntasks=288
 #SBATCH --tasks-per-node=24
 #SBATCH --mail-user=acjohnson16@alaska.edu
 #SBATCH --mail-type=BEGIN
