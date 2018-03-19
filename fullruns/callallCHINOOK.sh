@@ -4,8 +4,8 @@ runend=36
 #export mx=560
 #export my=499
 
-export NN=96
-export PART=t1standard
+export NN=48
+export PART=t1small
 
 for i in $(seq $runstart $runend);
 do export Outfm="Ant_run"$i".nc";
