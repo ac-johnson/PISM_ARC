@@ -60,5 +60,3 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin \
 #mpirun -n 24 -machinefile ./nodes.$SLURM_JOB_ID pismv -test G -y 200
 # Clean up the machinefile
 rm ./nodes.$SLURM_JOB_ID
-
-#test
