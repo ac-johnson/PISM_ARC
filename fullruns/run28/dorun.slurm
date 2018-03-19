@@ -29,7 +29,10 @@ srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
 #echo "ecalvK: "$ecalvK
 
 mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin \
-  -Mx $mx -My $my \
+  -regrid_file $Inspin \
+  -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
+  -Mx $mx -My $my -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \
+  -z_spacing quadratic -zb_spacing equal \
   -skip -skip_max 20 \
   -bed_smoother_range 5e3 \
   -grid.correct_cell_areas false -grid.registration corner \
