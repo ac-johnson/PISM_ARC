@@ -29,7 +29,7 @@ srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
 #echo "ecalvK: "$ecalvK
 
 mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin \
-  -Mx $mx -My $my
+  -Mx $mx -My $my \
   -skip -skip_max 20 \
   -bed_smoother_range 5e3 \
   -grid.correct_cell_areas false -grid.registration corner \
@@ -60,4 +60,3 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin \
 #mpirun -n 24 -machinefile ./nodes.$SLURM_JOB_ID pismv -test G -y 200
 # Clean up the machinefile
 rm ./nodes.$SLURM_JOB_ID
-
