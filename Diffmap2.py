@@ -22,8 +22,10 @@ from matplotlib import pyplot as plt
 #fileloc = '/home/andrew/runs/'
 #filename = 'ts_Ant_run*.nc'
 
-file1='/home/andrew/runs/Ant_run1.nc'
-file2='/home/andrew/runs/Ant_run3.nc'
+runsloc = '/home/andrewjohnson/runs/'
+file1 = runsloc + 'Ant_run1.nc'
+file2 = runsloc + 'Ant_run2.nc'
+#file2= runsloc + 'Ant_run3.nc'
 
 #infiles = glob(fileloc+filename)
 #print infiles
@@ -47,24 +49,28 @@ tdiffmap=np.flipud(tdiffmap)
 #def plotnormalize(inmap,midpoint):
 midpoint = 0
 inmap= tdiffmap
-outmap = inmap[:]
-rlen1 = abs(midpoint - np.min(inmap))
-rlen2 = abs(np.max(inmap)-midpoint)
-outmap[inmap<=midpoint]=(outmap[inmap<=midpoint]-np.min(inmap))/rlen1 * 0.5
-outmap[inmap>midpoint]=((outmap[outmap>midpoint]-midpoint)/rlen2)*0.5 + 0.5
+#outmap = inmap[:]
+#rlen1 = abs(midpoint - np.min(inmap))
+#rlen2 = abs(np.max(inmap)-midpoint)
+#outmap[inmap<=midpoint]=(outmap[inmap<=midpoint]-np.min(inmap))/rlen1 * 0.5
+#outmap[inmap>midpoint]=((outmap[outmap>midpoint]-midpoint)/rlen2)*0.5 + 0.5
     #(n-xmin)/range
     
 plt.figure(figsize=(12,10))
 #colors = [(255,0,0),(255,150,150),(150,150,255),(0,0,255)]
 #n_bins = [np.min(tdiffmap),-1,1,np.max(tdiffmap)]
 maxval = np.max(np.abs(tdiffmap))
-#plt.imshow(tdiffmap,cmap='RdBu',vmin=-maxval,vmax=maxval)
+plt.imshow(tdiffmap,cmap='RdBu',vmin=-maxval,vmax=maxval)
 #normmap = plotnormalize(tdiffmap,0)
-plt.imshow(tdiffmap,cmap='RdBu',norm=outmap)
+
+
+#plt.imshow(tdiffmap,cmap='RdBu',norm=outmap)
+
+
 plt.colorbar()
-plt.title('Thickness Difference after 1000yrs')
-titlestr='Ant_thk_diffv2.png'
-plt.savefig('/home/andrew/github/pism/pism/ARC/figures/'+titlestr)
+plt.title('Thickness Difference after 1000yrs (m)',fontsize=20)
+titlestr='Ant_thk_diff.png'
+plt.savefig('/home/andrewjohnson/github/pism/pism/PISM_ARC/figures/'+titlestr)
 
 #tm1 = thkmap1[0,:,:]
 #tm1 = np.flipud(tm1)

@@ -46,7 +46,7 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -till_effective_fraction_overburden $TEFO \
   -calving $calvstr \
   -eigen_calving_K $ecalvK -thickness_calving_threshold $tcalvt \
-  -subgl $nsbm $bdefstr \
+  -subgl true $nsbm $bdefstr \
   -tauc_slippery_grounding_lines -ts_file "${Outloc}ts_${Outfm}" -ts_times -$Yst:yearly:$Yet \
   -extra_file "${Outloc}ex_${Outfm}" -extra_times -$Yst:100:$Yet \
   -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,tendency_of_ice_amount_due_to_discharge,dHdt \
