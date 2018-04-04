@@ -40,13 +40,14 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -surface given -surface_given_file $Inboot \
   -atmosphere given,lapse_rate -atmosphere_given_file $Inboot \
   -atmostphere_lapse_rate_file $Inboot -temp_lapse_rate $lapr \
+  -ocean constant -ocean.sub_shelf_heat_flux_into_ice $sshfi \
   -sia_e $SIAe -ssa_e $SSAe -stress_balance ssa+sia \
   -topg_to_phi $TGPhi -pseudo_plastic -pseudo_plastic_q $PPQ \
   -pseudo_plastic_uthreshold $PPUt \
   -till_effective_fraction_overburden $TEFO \
-  -calving $calvstr \
+  $calvstr \
   -eigen_calving_K $ecalvK -thickness_calving_threshold $tcalvt \
-  -subgl $nsbm $bdefstr \
+  -subgl -kill_icebergs $nsbm $bdef \
   -tauc_slippery_grounding_lines -ts_file "$Outlocts_$Outfm" -ts_times -$Yst:yearly:$Yet \
   -extra_file "$Outlocex_$Outfm" -extra_times -$Yst:100:$Yet \
   -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,tendency_of_ice_amount_due_to_discharge,dHdt \

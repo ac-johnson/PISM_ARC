@@ -11,6 +11,7 @@ import sys
 from glob import glob
 from matplotlib import pyplot as plt
 
-infile = '/home/andrewjohnson/maps/PISM_1km_v3.nc'
+infile = '/home/andrewjohnson/runs/ex_Ant_run8.nc'
 
 dset = netCDF4.Dataset(infile,mode='r')
+print dset.variables

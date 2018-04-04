@@ -25,7 +25,7 @@ d['calvstr']="-calving eigen_calving,thickness_calving"
 d['Yst']=0
 d['Yet']=1000
 d['sshfi']=0.5
-d['Outloc']='$CENTER1/runs'
+d['Outloc']='$CENTER1/runs/'
 #d['misc']=''
 
 #d['-shelf_base_melt_rate']
