@@ -26,7 +26,7 @@ outns = 'Ant_'              #out name start
 #sfile = 'run.slurm'
 #sfile = run_regrid.slurm
 
-dorunlist = range(1,4)
+dorunlist = range(37,39)
 dorunlist = ['run'+str(i) for i in dorunlist]
 
 defaults = np.load(defaultfile).item()
@@ -81,7 +81,7 @@ for row in readCSVd:
         os.system('cp runtemp.slurm fullruns/'+run['runname']+'/run.slurm')
         os.system('rm runtemp.slurm')
         
-        #os.system('sbatch fullruns/'+run['runname']+'/run.slurm')
+        os.system('sbatch fullruns/'+run['runname']+'/run.slurm')
     
 
 #mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin \
