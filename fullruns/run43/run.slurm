@@ -10,8 +10,8 @@
 #SBATCH --output=pismr.%j
 
 
-echo "nodes: "96
-echo "parition: "t1standard
+echo "nodes: "48
+echo "parition: "t1small
 
 ulimit -s unlimited
 ulimit -l unlimited
@@ -28,7 +28,7 @@ srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
 # Launch the MPI application
 #echo "ecalvK: "1e16
 
-mpiexec -n 96 -machinefile ./nodes.$SLURM_JOB_ID pismr -i $CENTER1/maps/PISM_1km_v3.nc -bootstrap \
+mpiexec -n 48 -machinefile ./nodes.$SLURM_JOB_ID pismr -i $CENTER1/maps/PISM_1km_v3.nc -bootstrap \
   -regrid_file $CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc \
   -regrid_vars bwat,bmelt,dbdt,litho_temp,mask,temp_pa,enthalpy \
   -Mx 560 -My 499 -Mz 121 -Lz 6000 -Mbz 20 -Lbz 2000 \

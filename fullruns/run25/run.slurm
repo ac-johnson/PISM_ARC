@@ -1,7 +1,7 @@
 #!/bin/sh
 
-#SBATCH --partition=t1standard
-#SBATCH --ntasks=96
+#SBATCH --partition=t1small
+#SBATCH --ntasks=48
 #SBATCH --tasks-per-node=24
 #SBATCH --mail-user=acjohnson16@alaska.edu
 #SBATCH --mail-type=BEGIN
@@ -10,8 +10,8 @@
 #SBATCH --output=pismr.%j
 
 
-echo "nodes: "96
-echo "parition: "t1standard
+echo "nodes: "48
+echo "parition: "t1small
 
 ulimit -s unlimited
 ulimit -l unlimited
@@ -27,7 +27,7 @@ cd $SLURM_SUBMIT_DIR
 srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
 # Launch the MPI application
 
-mpiexec -n 96 -machinefile ./nodes.$SLURM_JOB_ID pismr -i $CENTER1/maps/Ant_10km_1yr_fk.nc \
+mpiexec -n 48 -machinefile ./nodes.$SLURM_JOB_ID pismr -i $CENTER1/maps/Ant_10km_1yr_fk.nc \
   -Mx 560 -My 499 \
   -skip -skip_max 20 \
   -bed_smoother_range 5e3 \
