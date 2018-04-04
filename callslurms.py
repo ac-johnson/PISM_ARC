@@ -9,7 +9,9 @@ import os
 
 #callslurms
 
-dorunlist = range(37,57)
+dorunlist = range(37,40)
+dorunlist.append(8)
+dorunlist.append(5)
 dorunlist = ['run'+str(i) for i in dorunlist]
 
 for run in dorunlist:
