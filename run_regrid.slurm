@@ -26,7 +26,6 @@ cd $SLURM_SUBMIT_DIR
 # Generate a list of allocated nodes; will serve as a machinefile for mpirun
 srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
 # Launch the MPI application
-#echo "ecalvK: "$ecalvK
 
 mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inboot -bootstrap \
   -regrid_file $Inspin \

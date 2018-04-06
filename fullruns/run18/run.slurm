@@ -1,7 +1,7 @@
 #!/bin/sh
 
-#SBATCH --partition=t1small
-#SBATCH --ntasks=48
+#SBATCH --partition=NonePART
+#SBATCH --ntasks=NoneNN
 #SBATCH --tasks-per-node=24
 #SBATCH --mail-user=acjohnson16@alaska.edu
 #SBATCH --mail-type=BEGIN
@@ -10,8 +10,8 @@
 #SBATCH --output=pismr.%j
 
 
-echo "nodes: "48
-echo "parition: "t1small
+echo "nodes: "NoneNN
+echo "parition: "NonePART
 
 ulimit -s unlimited
 ulimit -l unlimited
@@ -22,32 +22,32 @@ ulimit -l unlimited
 # module load toolchain/pic-intel/2016b
 # module load slurm
 
-cd $SLURM_SUBMIT_DIR
+cd NoneSLURM_SUBMIT_DIR
 # Generate a list of allocated nodes; will serve as a machinefile for mpirun
-srun -l /bin/hostname | sort -n | awk '{print $2}' > ./nodes.$SLURM_JOB_ID
+srun -l /bin/hostname | sort -n | awk '{print None2}' > ./nodes.NoneSLURM_JOB_ID
 # Launch the MPI application
 
-mpiexec -n 48 -machinefile ./nodes.$SLURM_JOB_ID pismr -i $CENTER1/maps/Ant_10km_1yr_fk.nc \
-  -Mx 560 -My 499 \
+mpiexec -n NoneNN -machinefile ./nodes.NoneSLURM_JOB_ID pismr -i NoneInspin \
+  -Mx Nonemx -My Nonemy \
   -skip -skip_max 20 \
   -bed_smoother_range 5e3 \
   -grid.correct_cell_areas false -grid.registration corner \
-  -ys -0 -ye 1000 \
-  -surface given -surface_given_file $CENTER1/maps/PISM_1km_v3.nc \
-  -atmosphere given,lapse_rate -atmosphere_given_file $CENTER1/maps/PISM_1km_v3.nc \
-  -atmostphere_lapse_rate_file $CENTER1/maps/PISM_1km_v3.nc -temp_lapse_rate 8 \
-  -ocean constant -ocean.sub_shelf_heat_flux_into_ice 0.5 \
-  -sia_e 2.0 -ssa_e 0.65 -stress_balance ssa+sia \
-  -topg_to_phi 15.0,40.0,-700,-100 -pseudo_plastic -pseudo_plastic_q 0.5 \
-  -pseudo_plastic_uthreshold 100 \
-  -till_effective_fraction_overburden 0.02 \
-  -calving float_kill,eigen_calving,thickness_calving \
-  -eigen_calving_K 5e+15 -thickness_calving_threshold 50 \
-  -subgl -kill_icebergs $nsbm  \
-  -tauc_slippery_grounding_lines -ts_file "$CENTER1/runsts_Ant_run18.nc" -ts_times -0:yearly:1000 \
-  -extra_file "$CENTER1/runsex_Ant_run18.nc" -extra_times -0:100:1000 \
+  -ys -NoneYst -ye NoneYet \
+  -surface given -surface_given_file NoneInboot \
+  -atmosphere given,lapse_rate -atmosphere_given_file NoneInboot \
+  -atmostphere_lapse_rate_file NoneInboot -temp_lapse_rate Nonelapr \
+  -ocean constant -ocean.sub_shelf_heat_flux_into_ice Nonesshfi \
+  -sia_e NoneSIAe -ssa_e NoneSSAe -stress_balance ssa+sia \
+  -topg_to_phi NoneTGPhi -pseudo_plastic -pseudo_plastic_q NonePPQ \
+  -pseudo_plastic_uthreshold NonePPUt \
+  -till_effective_fraction_overburden NoneTEFO \
+  Nonecalvstr \
+  -eigen_calving_K NoneecalvK -thickness_calving_threshold Nonetcalvt \
+  -subgl -kill_icebergs Nonensbm Nonebdef \
+  -tauc_slippery_grounding_lines -ts_file "NoneOutlocts_NoneOutfm" -ts_times -NoneYst:yearly:NoneYet \
+  -extra_file "NoneOutlocex_NoneOutfm" -extra_times -NoneYst:100:NoneYet \
   -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,tendency_of_ice_amount_due_to_discharge,dHdt \
-  -o "$CENTER1/runsAnt_run18.nc"
+  -o "NoneOutlocNoneOutfm"
 
 # Clean up the machinefile
-rm ./nodes.$SLURM_JOB_ID
+rm ./nodes.NoneSLURM_JOB_ID

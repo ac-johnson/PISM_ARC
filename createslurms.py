@@ -16,14 +16,15 @@ import numpy as np
 import os
 
 defaultfile = 'defaults.npy'
-inputfile = 'Inputtest.csv'
+inputfile = 'PISMinputs.csv'
 outns = 'Ant_'              #out name start
+dirname = 'fullruns/'
 
 #Values that must be in defaults list:
 #    
 #    runname,sfile,NN,PART,mx,my,Inspin,Inboot
 
-setrunlist = range(57)
+setrunlist = range(65)
 #dorunlist = range(37,57)
 dorunlist = []
 
@@ -52,18 +53,23 @@ for row in readCSVd:
     if run['runname'] in setrunlist:
         run['Outfm']=outns+run['runname']+'.nc'
 
+        currentdir = dirname + run['runname']
+        #Create run directory if it does not exist:
+        if not os.path.exists(currentdir):
+            os.makedirs(currentdir)
+
         adddefaults(run,defaultfile)
 
         sfile=run['sfile']
         os.system('cp '+sfile+' runtemp.slurm')
-        os.system('rm fullruns/'+run['runname']+'/run.slurm')
+        os.system('rm ' + currentdir +'/run.slurm')
 
         #Set up the sbatch tasks and partitions:
         #   (This cannot be done with variables other than just writing
         #   a new file)        
         f = open('runtemp.slurm','r+')
         s = f.read()
-#        print "%s, ecalvK: %s" % (run['runname'],run['ecalvK'])
+        print "%s, ecalvK: %s" % (run['runname'],run['ecalvK'])
         for key in run.keys():
             s = s.replace('$'+key,str(run[key]))
             f.seek(0)
@@ -72,11 +78,11 @@ for row in readCSVd:
         f.write(s)
         f.close()
         
-        os.system('cp runtemp.slurm fullruns/'+run['runname']+'/run.slurm')
+        os.system('cp runtemp.slurm ' + currentdir + '/run.slurm')
         os.system('rm runtemp.slurm')
     
     if run['runname'] in dorunlist:
-        os.system('cd fullruns/'+run['runname']+'; sbatch run.slurm')
+        os.system('cd '+ currentdir + '; sbatch run.slurm')
     
 
 #mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin \
