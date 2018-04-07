@@ -1,17 +1,13 @@
 #!/bin/sh
 
-#SBATCH --partition=t1small
-#SBATCH --ntasks=48
+#SBATCH --partition=$PART
+#SBATCH --ntasks=$NN
 #SBATCH --tasks-per-node=24
 #SBATCH --mail-user=acjohnson16@alaska.edu
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
 #SBATCH --output=pismr.%j
-
-
-echo "nodes: "$NN
-echo "parition: "$PART
 
 ulimit -s unlimited
 ulimit -l unlimited

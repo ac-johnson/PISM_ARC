@@ -35,10 +35,11 @@ dorunlist = ['run'+str(i) for i in dorunlist]
 defaults = np.load(defaultfile).item()
 
 csvfile = open(inputfile)
-readCSV = csv.reader(csvfile, delimiter=',')
+#readCSV = csv.reader(csvfile, delimiter=',')
 readCSVd = csv.DictReader(csvfile)
 
 def adddefaults(run,defaultfile):
+    #Adds default values if value doesn't exist
     runkeys = run.keys()
     defaults = np.load(defaultfile).item()
     for key in defaults.keys():
@@ -50,6 +51,7 @@ def adddefaults(run,defaultfile):
             
 for row in readCSVd:
     run = row
+    #print run
     if run['runname'] in setrunlist:
         run['Outfm']=outns+run['runname']+'.nc'
 
@@ -58,6 +60,7 @@ for row in readCSVd:
         if not os.path.exists(currentdir):
             os.makedirs(currentdir)
 
+        #Add in default values
         adddefaults(run,defaultfile)
 
         sfile=run['sfile']
@@ -69,9 +72,10 @@ for row in readCSVd:
         #   a new file)        
         f = open('runtemp.slurm','r+')
         s = f.read()
-        print "%s, ecalvK: %s" % (run['runname'],run['ecalvK'])
+        #print "%s, ecalvK: %s" % (run['runname'],run['ecalvK'])
+        #print run['Outloc']
         for key in run.keys():
-            s = s.replace('$'+key,str(run[key]))
+            s = s.replace('$'+str(key),str(run[str(key)]))
             f.seek(0)
 
         f.seek(0)

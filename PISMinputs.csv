@@ -1,65 +1,65 @@
-runname,sfile,NN,PART,mx,my,Inspin,Inboot,SIAe,SSAe,PPQ,ecalvK,sshfi,calvstr,,,
-run1,run.slurm,96,t1standard,1119,997,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,,"-calving,float_kill,eigen_calving,thickness_calving"
-run2,run.slurm,96,t1standard,1119,997,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,,,,,
-run3,run_regrid.slurm,96,t1standard,1119,997,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,,,,,
-run4,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,1,,,,,"-calving,float_kill,eigen_calving,thickness_calving"
-run5,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,2,,,,,"-calving,float_kill,eigen_calving,thickness_calving"
-run6,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,3,,,,,"-calving,float_kill,eigen_calving,thickness_calving"
-run7,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,1,,,,,,,,
-run8,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,2,,,,,,,,
-run9,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,3,,,,,,,,
-run10,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,0.3,,,,"-calving,float_kill,eigen_calving,thickness_calving"
-run11,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,0.65,,,,"-calving,float_kill,eigen_calving,thickness_calving"
-run12,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,1,,,,"-calving,float_kill,eigen_calving,thickness_calving"
-run13,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,0.3,,,,,,,
-run14,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,0.65,,,,,,,
-run15,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,1,,,,,,,
-run16,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0,,,"-calving,float_kill,eigen_calving,thickness_calving"
-run17,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.25,,,"-calving,float_kill,eigen_calving,thickness_calving"
-run18,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.5,,,"-calving,float_kill,eigen_calving,thickness_calving"
-run19,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.75,,,"-calving,float_kill,eigen_calving,thickness_calving"
-run20,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,1,,,"-calving,float_kill,eigen_calving,thickness_calving"
-run21,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0,,,,,,
-run22,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.25,,,,,,
-run23,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.5,,,,,,
-run24,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.75,,,,,,
-run25,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,1,,,,,,
-run26,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,1,,,,,,,,
-run27,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,2,,,,,,,,
-run28,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,3,,,,,,,,
-run29,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,0.3,,,,,,,
-run30,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,0.65,,,,,,,
-run31,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,1,,,,,,,
-run32,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0,,,,,,
-run33,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.25,,,,,,
-run34,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.5,,,,,,
-run35,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.75,,,,,,
-run36,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,1,,,,,,
-run37,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e15,,,,,
-run38,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e16,,,,,
-run39,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e17,,,,,
-run40,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e18,,,,,
-run41,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e19,,,,,
-run42,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e15,,,,,
-run43,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e16,,,,,
-run44,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e17,,,,,
-run45,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e18,,,,,
-run46,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e19,,,,,
-run47,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,0.1,,,,
-run48,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,0.5,,,,
-run49,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,1,,,,
-run50,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,5,,,,
-run51,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,10,,,,
-run52,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,0.1,,,,
-run53,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,0.5,,,,
-run54,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,1,,,,
-run55,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,5,,,,
-run56,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,10,,,,
-run57,run.slurm,48,t1small,561,500,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e20,,,,,
-run58,run.slurm,48,t1small,562,501,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e21,,,,,
-run59,run_regrid.slurm,48,t1small,563,502,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e20,,,,,
-run60,run_regrid.slurm,48,t1small,564,503,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1e21,,,,,
-run61,run.slurm,48,t1small,561,500,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,50,,,,
-run62,run.slurm,48,t1small,562,501,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,100,,,,
-run63,run_regrid.slurm,48,t1small,563,502,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,50,,,,
-run64,run_regrid.slurm,48,t1small,564,503,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,100,,,,
+runname,sfile,NN,PART,mx,my,Inspin,Inboot,SIAe,SSAe,PPQ,ecalvK,sshfi,calvstr
+run1,run.slurm,96,t1standard,1119,997,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,,"-calving float_kill,eigen_calving,thickness_calving"
+run2,run.slurm,96,t1standard,1119,997,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,,
+run3,run_regrid.slurm,96,t1standard,1119,997,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,,
+run4,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,1,,,,,"-calving float_kill,eigen_calving,thickness_calving"
+run5,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,2,,,,,"-calving float_kill,eigen_calving,thickness_calving"
+run6,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,3,,,,,"-calving float_kill,eigen_calving,thickness_calving"
+run7,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,1,,,,,
+run8,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,2,,,,,
+run9,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,3,,,,,
+run10,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,0.3,,,,"-calving float_kill,eigen_calving,thickness_calving"
+run11,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,0.65,,,,"-calving float_kill,eigen_calving,thickness_calving"
+run12,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,1,,,,"-calving float_kill,eigen_calving,thickness_calving"
+run13,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,0.3,,,,
+run14,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,0.65,,,,
+run15,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,1,,,,
+run16,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0,,,"-calving float_kill,eigen_calving,thickness_calving"
+run17,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.25,,,"-calving float_kill,eigen_calving,thickness_calving"
+run18,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.5,,,"-calving float_kill,eigen_calving,thickness_calving"
+run19,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.75,,,"-calving float_kill,eigen_calving,thickness_calving"
+run20,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,1,,,"-calving float_kill,eigen_calving,thickness_calving"
+run21,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0,,,
+run22,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.25,,,
+run23,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.5,,,
+run24,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.75,,,
+run25,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,1,,,
+run26,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,1,,,,,
+run27,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,2,,,,,
+run28,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,3,,,,,
+run29,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,0.3,,,,
+run30,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,0.65,,,,
+run31,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,1,,,,
+run32,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0,,,
+run33,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.25,,,
+run34,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.5,,,
+run35,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,0.75,,,
+run36,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,1,,,
+run37,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1000000000000000,,
+run38,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1E+016,,
+run39,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1E+017,,
+run40,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1E+018,,
+run41,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1E+019,,
+run42,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1000000000000000,,
+run43,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1E+016,,
+run44,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1E+017,,
+run45,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1E+018,,
+run46,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1E+019,,
+run47,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,0.1,
+run48,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,0.5,
+run49,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,1,
+run50,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,5,
+run51,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,10,
+run52,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,0.1,
+run53,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,0.5,
+run54,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,1,
+run55,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,5,
+run56,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,10,
+run57,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1E+020,,
+run58,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1E+021,,
+run59,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1E+020,,
+run60,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,1E+021,,
+run61,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,50,
+run62,run.slurm,48,t1small,560,499,$CENTER1/maps/Ant_10km_1yr_fk.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,100,
+run63,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,50,
+run64,run_regrid.slurm,48,t1small,560,499,$CENTER1/maps/end_evol-5km_Ant_spinup_W65.nc,$CENTER1/maps/PISM_1km_v3.nc,,,,,100,

@@ -9,10 +9,6 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --output=pismr.%j
 
-
-echo "nodes: "$NN
-echo "parition: "$PART
-
 ulimit -s unlimited
 ulimit -l unlimited
 
@@ -44,10 +40,10 @@ mpiexec -n $NN -machinefile ./nodes.$SLURM_JOB_ID pismr -i $Inspin \
   $calvstr \
   -eigen_calving_K $ecalvK -thickness_calving_threshold $tcalvt \
   -subgl -kill_icebergs $nsbm $bdef \
-  -tauc_slippery_grounding_lines -ts_file "$Outlocts_$Outfm" -ts_times -$Yst:yearly:$Yet \
-  -extra_file "$Outlocex_$Outfm" -extra_times -$Yst:100:$Yet \
+  -tauc_slippery_grounding_lines -ts_file $Outlocts_$Outfm -ts_times -$Yst:yearly:$Yet \
+  -extra_file $Outlocex_$Outfm -extra_times -$Yst:100:$Yet \
   -extra_vars diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,hardav,velbase_mag,tauc,tendency_of_ice_amount_due_to_discharge,dHdt \
-  -o "$Outloc$Outfm"
+  -o $Outloc$Outfm
 
 # Clean up the machinefile
 rm ./nodes.$SLURM_JOB_ID
