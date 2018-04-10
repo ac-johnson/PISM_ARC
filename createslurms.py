@@ -24,7 +24,7 @@ dirname = 'fullruns/'
 #    
 #    runname,sfile,NN,PART,mx,my,Inspin,Inboot
 
-setrunlist = range(65)
+setrunlist = range(75)
 #dorunlist = range(37,57)
 dorunlist = []
 
@@ -49,15 +49,18 @@ def adddefaults(run,defaultfile):
             run[key]=defaults[key]
             
             
-for row in readCSVd:
-    run = row
+for run in readCSVd:
+    #run = row
     #print run
     if run['runname'] in setrunlist:
         run['Outfm']=outns+run['runname']+'.nc'
 
         currentdir = dirname + run['runname']
+        
+        print currentdir        
         #Create run directory if it does not exist:
         if not os.path.exists(currentdir):
+            print 'creating dir for: '+run['runname']
             os.makedirs(currentdir)
 
         #Add in default values
